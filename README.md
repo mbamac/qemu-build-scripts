@@ -6,8 +6,8 @@ Scripts for building **qemu 6.2.0** on **macOS 12.1**. Qemu will be installed in
 
 Order of running scripts:
 
-- `qemu-download.sh`: downloads required packages in `./download/` directory and them unpack to `./src/`
-- `qemu-build-libs.sh`: builds and installs software required to build qemu. Libraries are installed in `/Applications/qemu-<version>`. Pkgconfig is installed in "Desktop" folder.
+- `qemu-download.sh`: downloads required packages in subdirectories`./download/` directory and them unpack to `./src/`. Both directories are created in current directory.
+- `qemu-build-libs.sh`: builds and installs software required to build qemu. Libraries are installed in `/Applications/qemu-<version>`. Pkgconfig is installed in "Desktop" folder. The script does not build `qemu`.
 - `qemu-build.sh`: builds and installs `qemu` in `/Applications/qemu`
 
 Scripts do not modify shell startup files, so you have to add `/Application/qemu-<version>/bin` to `$PATH`
