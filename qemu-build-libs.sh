@@ -1,10 +1,4 @@
-QEMU_VERSION=6.2.0
-GLIB_VERSION=2.71.0
-PKG_CONFIG_VERSION=0.29.2
-PIXMAN_VERSION=0.40.0
-NINJA_VERSION=1.10.2
-MESON_VERSION=0.61.0
-#LIBFFI_VERSION=3.4.2
+. ./deps-versions.sh
 
 BUILD_DIR=$(pwd)/src
 INSTALL_DIR=/Applications/qemu-$QEMU_VERSION
@@ -28,6 +22,8 @@ function go_build_dir {
 
 ################
 
+echo "building pkg-config"
+
 mkdir -p $PKG_CONFIG_DIR
 cd pkg-config-$PKG_CONFIG_VERSION
 go_build_dir
@@ -38,13 +34,21 @@ make install
 
 ################
 
-cd $BUILD_DIR/glib-2.71.0
+echo "building glib"
 
-../meson-$MESON_VERSION/meson.py _build --prefix=$INSTALL_DIR
+cd $BUILD_DIR/glib-$GLIB_VERSION
+
+if ! ../meson-$MESON_VERSION/meson.py _build --prefix=$INSTALL_DIR
+then
+	echo ERROR
+	exit
+fi
 ninja -C _build
 ninja -C _build install
 
 ################
+
+echo "building pixman"
 
 cd $BUILD_DIR/pixman-$PIXMAN_VERSION
 go_build_dir

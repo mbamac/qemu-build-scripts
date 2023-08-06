@@ -1,4 +1,4 @@
-QEMU_VERSION=6.2.0
+. ./deps-versions.sh
 
 BUILD_DIR=$(pwd)/src
 INSTALL_DIR=/Applications/qemu-$QEMU_VERSION
