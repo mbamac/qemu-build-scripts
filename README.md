@@ -13,11 +13,11 @@ Order of running scripts:
 Scripts do not modify shell startup files, so you have to add `/Application/qemu-<version>/bin` to `$PATH`
 
 Installed versions:
-- qemu 6.2.0
-- glib 2.71.0
+- qemu 8.0.3
+- glib 2.77.1
 - pkg-config 0.29.2
 - pixman 0.40.0
-- ninja 1.10.2
-- meson 0.61.0
+- ninja 1.11.1
+- meson 1.2.0
 
 After successfull intalation you can remove files from `./download/`,`./src/` and `pkg-config/` from "Desktop"
