@@ -17,6 +17,7 @@ Installed versions:
 - glib 2.77.1
 - pkg-config 0.29.2
 - pixman 0.40.0
+- libslirp 4.7.0
 - ninja 1.11.1
 - meson 1.2.0
 

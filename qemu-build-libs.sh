@@ -57,3 +57,26 @@ go_build_dir
 make
 make install
 
+################
+
+echo "building slirp"
+
+cd $BUILD_DIR/libslirp-$LIBSLIRP_VERSION
+
+export CFLAGS=-I$INSTALL_DIR/include
+export CPPFLAGS=-I$INSTALL_DIR/include
+export LDFLAGS=-L$INSTALL_DIR/lib
+export LIBS=-L$INSTALL_DIR/lib
+export LIBRARY_PATH=$INSTALL_DIR/lib
+export DYLD_LIBRARY_PATH=$INSTALL_DIR/lib
+
+export GLIB_LIBS=-L$INSTALL_DIR/lib
+export GLIB_CFLAG=-I$INSTALL_DIR/include
+
+if ! ../meson-$MESON_VERSION/meson.py build --prefix=$INSTALL_DIR
+then
+	echo ERROR
+	exit
+fi
+
+ninja -C build install

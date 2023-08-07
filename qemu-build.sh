@@ -33,7 +33,7 @@ function go_build {
 cd $BUILD_DIR/qemu-$QEMU_VERSION
 go_build
 
-../configure --prefix=$INSTALL_DIR
+../configure --prefix=$INSTALL_DIR --enable-slirp
 make
 make install
 
