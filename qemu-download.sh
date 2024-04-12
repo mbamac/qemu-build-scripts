@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 BUILD_DIR=$(pwd)/src
 DOWNLOAD_DIR=$(pwd)/download
 . ./deps-versions.sh
@@ -17,7 +19,7 @@ function get_archive {
 	fi
 	echo "downloading $1$2"
 	curl -LO $1$2 #2> /dev/null
-	if [ $? == 0 ]
+	if [ $? = 0 ]
 	then
 		echo
 		echo "$1$2 saved!"
@@ -34,10 +36,8 @@ cd $DOWNLOAD_DIR
 
 get_archive https://download.qemu.org/ qemu-$QEMU_VERSION.tar.xz
 get_archive https://download.gnome.org/sources/glib/$GLIB_MAIN_VERSION/ glib-$GLIB_VERSION.tar.xz
-# get_archive https://github.com/PCRE2Project/pcre2/releases/download/pcre2-$PCRE2_VERSION/ pcre2-$PCRE2_VERSION.tar.gz
 get_archive https://gitlab.freedesktop.org/slirp/libslirp/-/archive/$LIBSLIRP_VERSION/ libslirp-$LIBSLIRP_VERSION.tar.gz
 get_archive https://pkgconfig.freedesktop.org/releases/ pkg-config-$PKG_CONFIG_VERSION.tar.gz
-get_archive https://www.cairographics.org/releases/ pixman-$PIXMAN_VERSION.tar.gz
 get_archive https://github.com/ninja-build/ninja/releases/download/v$NINJA_VERSION/ ninja-mac.zip
 get_archive https://github.com/mesonbuild/meson/releases/download/$MESON_VERSION/ meson-$MESON_VERSION.tar.gz
 
@@ -56,9 +56,6 @@ tar xzf $DOWNLOAD_DIR/libslirp-$LIBSLIRP_VERSION.tar.gz
 
 echo unpacking pkg-config
 tar xzf $DOWNLOAD_DIR/pkg-config-$PKG_CONFIG_VERSION.tar.gz
-
-echo unpacking pixman
-tar xzf $DOWNLOAD_DIR/pixman-$PIXMAN_VERSION.tar.gz
 
 echo unpacking meson
 tar xzf $DOWNLOAD_DIR/meson-$MESON_VERSION.tar.gz
