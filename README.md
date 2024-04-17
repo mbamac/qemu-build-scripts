@@ -2,6 +2,12 @@
 
 Scripts for building **qemu** on **macOS 14.4**. Qemu will be installed in `/Applications/qemu-<version>` directory.
 
+
+## Prerequsites
+
+Before running scripts you should install python module with command:
+
+```python3 -m pip install packaging```
 ## Building
 
 Order of running scripts:
