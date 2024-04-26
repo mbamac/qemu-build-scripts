@@ -19,7 +19,7 @@ Order of running scripts:
 Scripts do not modify shell startup files, so you have to add `/Application/qemu-<version>/bin` to `$PATH`
 
 Installed versions:
-- qemu 8.2.2
+- qemu 9.0.0
 - glib 2.80.0
 - pkg-config 0.29.2
 - libslirp 4.7.0
