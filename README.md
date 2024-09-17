@@ -1,6 +1,6 @@
 # qemu-build-scripts
 
-Scripts for building **qemu** on **macOS 14.4**. Qemu will be installed in `/Applications/qemu-<version>` directory.
+Scripts for building **qemu** on **macos 14.4** or **macos 15.0**. Qemu will be installed in `/Applications/qemu-<version>` directory.
 
 
 ## Prerequsites
@@ -8,6 +8,11 @@ Scripts for building **qemu** on **macOS 14.4**. Qemu will be installed in `/App
 Before running scripts you should install python module with command:
 
 ```python3 -m pip install packaging```
+
+or on macos Sequoia:
+
+```python3 -m pip install tomli```
+
 ## Building
 
 Order of running scripts:
