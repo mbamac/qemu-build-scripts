@@ -1,6 +1,6 @@
 # qemu-build-scripts
 
-Scripts for building **qemu** on **macos 14.4** or **macos 15.0**. Qemu will be installed in `/Applications/qemu-<version>` directory.
+Scripts for building **qemu** on **macos 15.2**. Qemu will be installed in `/Applications/qemu-<version>` directory.
 
 
 ## Prerequsites
@@ -24,11 +24,11 @@ Order of running scripts:
 Scripts do not modify shell startup files, so you have to add `/Application/qemu-<version>/bin` to `$PATH`
 
 Installed versions:
-- qemu 9.0.0
-- glib 2.80.0
+- qemu 9.2.0
+- glib 2.83.2
 - pkg-config 0.29.2
-- libslirp 4.7.0
-- ninja 1.11.1
-- meson 1.2.0
+- libslirp 4.8.0
+- ninja 1.12.1
+- meson 1.5.1
 
 After successfull intalation you can remove files from `./download/`, `./src/` and `./lib/`
